@@ -1,13 +1,16 @@
 <template>
   <div>
+    <!-- This will display the Array on the page -->
     <main v-for="song in songs" :key="song">
       <img :src="song.img" />
       <h3>{{ song.song }}</h3>
       <i
         >{{ song.artist }} <br />
-        <button>Select</button></i
+        <!-- I want this button to work when a user selects a song -->
+        <button @click="addToPlayList">Select</button></i
       >
     </main>
+    <!-- I want content from this page to print on the playlist page -->
     <PlayList
       v-for="(song, index) in songs"
       :key="index"
@@ -19,6 +22,7 @@
 </template>
 
 <script>
+// Importing this Playlist page in this page
 import PlayList from "@/components/PlayList.vue";
 
 export default {
@@ -29,7 +33,9 @@ export default {
   name: "PageBody",
   data() {
     return {
+      // Adding an empty array so I can push the content in PlayList page
       playlist: [],
+      // Array for songs
       songs: [
         {
           img: "https://i.scdn.co/image/ab67616d0000b273da5b9c1eb275d48e14d25f3e",
@@ -69,6 +75,7 @@ export default {
       ],
     };
   },
+  // METHOD
   methods: {
     ListenToIt(song) {
       this.playlist.push(song);

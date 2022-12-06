@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <button @click="addToPlaylist">ADD SONG</button>
-  </div>
+  <div></div>
 </template>
 
 <script>
