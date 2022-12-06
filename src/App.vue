@@ -1,22 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PageBody />
+    <SongList />
+    <PlayList />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import PageBody from "@/components/PageBody.vue";
+import PlayList from "@/components/PlayList.vue";
+import SongList from "@/components/SongList.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    PageBody,
+    PlayList,
+    SongList,
+  },
+};
 </script>
 
 <style>
+html {
+  background-color: black;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
